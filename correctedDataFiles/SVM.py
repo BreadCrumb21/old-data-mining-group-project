@@ -5,7 +5,10 @@ from sklearn.svm import SVC
 
 data = pd.read_csv('hotData.csv')
 #print(data.isna().sum())
-X = data.drop(columns=['Workclass_new', 'Education_new', 'Marital-status_new', 'Occupation_new', 'Relationship_new', 'Race_new', 'Sex_new','Native-country_new', 'Salary_new'])
+X = data.drop(columns=['Workclass_new', 'Education_new',
+                       'Marital-status_new', 'Occupation_new',
+                       'Relationship_new', 'Race_new', 'Sex_new',
+                       'Native-country_new', 'Salary_new'])
 y = data['Salary_new']
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size= 0.30, random_state= 2)
